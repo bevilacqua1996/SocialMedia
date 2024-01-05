@@ -1,6 +1,4 @@
-package com.quarkus.social.quarkus.social.domain.model;
-
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
+package com.social.media.quarkus.social.domain.model;
 
 import javax.persistence.*;
 import java.util.Objects;

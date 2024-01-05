@@ -1,4 +1,4 @@
-package com.quarkus.social;
+package com.social.media;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;

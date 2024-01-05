@@ -1,4 +1,4 @@
-package com.quarkus.social;
+package com.social.media;
 
 import io.quarkus.test.junit.QuarkusIntegrationTest;
 

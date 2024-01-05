@@ -1,4 +1,4 @@
-package com.quarkus.social.quarkus.social.rest.dto;
+package com.social.media.quarkus.social.rest.dto;
 
 public class CreateUserRequest {
     private String name;
