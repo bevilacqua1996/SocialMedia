@@ -3,13 +3,17 @@ package com.social.media.quarkus.social.rest;
 import com.social.media.quarkus.social.domain.model.User;
 import com.social.media.quarkus.social.domain.repository.UserRepository;
 import com.social.media.quarkus.social.rest.dto.CreateUserRequest;
+import com.social.media.quarkus.social.rest.dto.ResponseError;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;
+import javax.validation.ConstraintViolation;
+import javax.validation.Validator;
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+import java.util.Set;
 
 @Path("/users")
 @Consumes(MediaType.APPLICATION_JSON)
@@ -17,21 +21,33 @@ import javax.ws.rs.core.Response;
 public class UserResource {
 
     private UserRepository userRepository;
+    private Validator validator;
 
     @Inject
-    public UserResource(UserRepository userRepository) {
+    public UserResource(UserRepository userRepository, Validator validator) {
         this.userRepository = userRepository;
+        this.validator = validator;
     }
 
     @POST
     @Transactional
     public Response createUser(CreateUserRequest createUserRequest){
+        Set<ConstraintViolation<CreateUserRequest>> violations = validator.validate(createUserRequest);
+
+        if(!violations.isEmpty()) {
+            ResponseError responseError = ResponseError.createFromValidation(violations);
+            return Response.status(Response.Status.BAD_REQUEST).entity(responseError).build();
+        }
+
         User user = new User();
         user.setAge(createUserRequest.getAge());
         user.setName(createUserRequest.getName());
 
         userRepository.persist(user);
-        return Response.ok(user).build();
+        return Response.
+                status(Response.Status.CREATED).
+                entity(user).
+                build();
     }
 
     @GET
@@ -48,7 +64,7 @@ public class UserResource {
 
         if(user!=null) {
             userRepository.delete(user);
-            return Response.ok().build();
+            return Response.noContent().build();
         }
 
         return Response.status(Response.Status.NOT_FOUND).build();
