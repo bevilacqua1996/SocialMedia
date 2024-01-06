@@ -1,6 +1,6 @@
-package com.social.media.quarkus.social.rest.dto;
+package com.social.media.rest.dto;
 
-import com.social.media.quarkus.social.domain.model.Follower;
+import com.social.media.domain.model.Follower;
 import lombok.Data;
 
 @Data
