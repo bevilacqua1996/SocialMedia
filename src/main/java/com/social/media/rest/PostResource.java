@@ -1,12 +1,12 @@
-package com.social.media.quarkus.social.rest;
+package com.social.media.rest;
 
-import com.social.media.quarkus.social.domain.model.Post;
-import com.social.media.quarkus.social.domain.model.User;
-import com.social.media.quarkus.social.domain.repository.FollowerRepository;
-import com.social.media.quarkus.social.domain.repository.PostRepository;
-import com.social.media.quarkus.social.domain.repository.UserRepository;
-import com.social.media.quarkus.social.rest.dto.CreatePostRequest;
-import com.social.media.quarkus.social.rest.dto.PostResponse;
+import com.social.media.domain.model.Post;
+import com.social.media.domain.repository.FollowerRepository;
+import com.social.media.domain.repository.PostRepository;
+import com.social.media.domain.model.User;
+import com.social.media.domain.repository.UserRepository;
+import com.social.media.rest.dto.CreatePostRequest;
+import com.social.media.rest.dto.PostResponse;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 import io.quarkus.panache.common.Sort;
 

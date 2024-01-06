@@ -1,4 +1,4 @@
-package com.social.media.quarkus.social.domain.model;
+package com.social.media.domain.model;
 
 import lombok.Data;
 
