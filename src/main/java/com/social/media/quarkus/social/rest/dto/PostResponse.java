@@ -1,6 +1,6 @@
-package com.social.media.rest.dto;
+package com.social.media.quarkus.social.rest.dto;
 
-import com.social.media.domain.model.Post;
+import com.social.media.quarkus.social.domain.model.Post;
 import lombok.Data;
 
 import java.time.LocalDateTime;

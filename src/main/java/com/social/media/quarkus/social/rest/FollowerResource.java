@@ -1,11 +1,11 @@
-package com.social.media.rest;
+package com.social.media.quarkus.social.rest;
 
-import com.social.media.domain.model.Follower;
-import com.social.media.domain.repository.FollowerRepository;
-import com.social.media.domain.repository.UserRepository;
-import com.social.media.rest.dto.CreateFollowerRequest;
-import com.social.media.rest.dto.FollowerPerUserResponse;
-import com.social.media.rest.dto.FollowerResponse;
+import com.social.media.quarkus.social.domain.model.Follower;
+import com.social.media.quarkus.social.domain.repository.FollowerRepository;
+import com.social.media.quarkus.social.domain.repository.UserRepository;
+import com.social.media.quarkus.social.rest.dto.CreateFollowerRequest;
+import com.social.media.quarkus.social.rest.dto.FollowerPerUserResponse;
+import com.social.media.quarkus.social.rest.dto.FollowerResponse;
 
 import javax.inject.Inject;
 import javax.transaction.Transactional;

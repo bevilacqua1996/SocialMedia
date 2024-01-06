@@ -1,9 +1,9 @@
-package com.social.media.rest;
+package com.social.media.quarkus.social.rest;
 
-import com.social.media.domain.model.User;
-import com.social.media.domain.repository.UserRepository;
-import com.social.media.rest.dto.CreateUserRequest;
-import com.social.media.rest.dto.ResponseError;
+import com.social.media.quarkus.social.domain.model.User;
+import com.social.media.quarkus.social.domain.repository.UserRepository;
+import com.social.media.quarkus.social.rest.dto.CreateUserRequest;
+import com.social.media.quarkus.social.rest.dto.ResponseError;
 import io.quarkus.hibernate.orm.panache.PanacheQuery;
 
 import javax.inject.Inject;
