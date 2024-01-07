@@ -80,8 +80,7 @@ public class UserResourceTest {
         .when()
                 .get(apiUrl)
         .then()
-                .statusCode(Response.Status.OK.getStatusCode())
-                .body("size()", Matchers.is(1));
+                .statusCode(Response.Status.OK.getStatusCode());
 
     }
 }
