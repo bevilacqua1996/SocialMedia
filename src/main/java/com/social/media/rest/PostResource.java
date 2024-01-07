@@ -55,14 +55,15 @@ public class PostResource {
     @GET
     public Response listPosts(@PathParam("userId") Long userId,
                               @HeaderParam("followerId") Long followerId) {
-        if(followerId==null) {
-            return Response.status(Response.Status.BAD_REQUEST).entity("Follower Id is not present").build();
-        }
 
         User user = userRepository.findById(userId);
 
         if(user == null) {
             return Response.status(Response.Status.NOT_FOUND).build();
+        }
+
+        if(followerId==null) {
+            return Response.status(Response.Status.BAD_REQUEST).entity("Follower Id is not present").build();
         }
 
         User follower = userRepository.findById(followerId);
