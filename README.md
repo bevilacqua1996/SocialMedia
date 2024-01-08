@@ -1,4 +1,4 @@
-# quarkus-social Project
+# Social Media Project
 
 This project uses Quarkus, the Supersonic Subatomic Java Framework.
 
@@ -58,3 +58,7 @@ If you want to learn more about building native executables, please consult http
 Easily start your RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started#the-jax-rs-resources)
+
+## More Info
+
+You can check more about this project on this article [Substack Article](https://open.substack.com/pub/bevilacqua96/p/api-development-using-quarkus?r=2je0lv&utm_campaign=post&utm_medium=web)
