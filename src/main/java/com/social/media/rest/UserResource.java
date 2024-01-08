@@ -20,8 +20,8 @@ import java.util.Set;
 @Produces(MediaType.APPLICATION_JSON)
 public class UserResource {
 
-    private UserRepository userRepository;
-    private Validator validator;
+    private final UserRepository userRepository;
+    private final Validator validator;
 
     @Inject
     public UserResource(UserRepository userRepository, Validator validator) {
